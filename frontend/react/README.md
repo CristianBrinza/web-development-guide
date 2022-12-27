@@ -228,7 +228,7 @@ constructor(props) {
 ``` typescript
 import React, { Component } from 'react'
 
-export default class NameOfTheComponent extents Component= () => {
+export default class NameOfTheComponent extents Component {
   constructor(props) {  // the constructor
     super(props)
 
@@ -247,7 +247,7 @@ or
 ``` typescript
 import React, { Component } from 'react'
 
-export default class NameOfTheComponent extents Component= () => {
+export default class NameOfTheComponent extents Component {
   constructor(props) {
     super(props)
 
@@ -268,7 +268,7 @@ export default class NameOfTheComponent extents Component= () => {
 ``` typescript
 import React, { Component } from 'react'
 
-export default class NameOfTheComponent extents Component= () => {
+export default class NameOfTheComponent extents Component {
   constructor(props) {  
     super(props)
 
@@ -278,7 +278,7 @@ export default class NameOfTheComponent extents Component= () => {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(){
-    this.setstate({
+    this.setState({
         nameofstate: "changedexemplestate" // this will be the <div> this.state.nameofstate from from "exemplestate" to "changedexemplestate
     })
   }
@@ -286,6 +286,77 @@ export default class NameOfTheComponent extents Component= () => {
     return (
        <div>exemple {this.state.nameofstate}</div> // in this exemple "nameofstate" will be changed from "exemplestate" to "changedexemplestate"
        <button onClick={this.handleClick}>Click</button>   //adding a button with a function that will execute when the button will be pressed
+    );
+  }
+}
+```
+
+</br></br>
+
+# Forms <a name="8"></a>
+exemple:
+``` typescript
+import React, { Component } from 'react'
+
+export default class NameOfTheComponent extents Component{
+  constructor(props) {  
+    super(props)
+    this.state = {
+        input:""
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleChange (event){
+        this.setState({
+            input: event.target.value   // in this example the div will change the text
+        });                             //  if text will be modified in <input/>
+  }
+  render(){
+    return (
+      <div>
+        <input onChange={this.handleChange}/>
+        <div>{this.state.input}</div>               
+      </div>
+    );
+  }
+}
+```
+
+
+## Submit form
+``` typescript
+import React, { Component } from 'react'
+
+export default class NameOfTheComponent extents Component{
+  constructor(props) {  
+    super(props)
+    this.state = {
+        input:"",
+        submit:""
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange (event){
+        this.setState({
+            input: event.target.value   
+        });                             
+  }
+  handleSubmit (event){
+        event.preventDefault();
+        this.setState({
+            submit: this.state.input   
+        });                             
+  }
+  render(){
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+            <input valut={this.state.input} onChange={this.handleChange}/>
+            <button type="submit">Submit</button>
+        </form>
+        <div>{this.state.submit}</div>               
+      </div>
     );
   }
 }
