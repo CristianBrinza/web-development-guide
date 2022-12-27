@@ -361,3 +361,62 @@ export default class NameOfTheComponent extents Component{
   }
 }
 ```
+---
+</br></br>
+
+# CSS <a name="9"></a>
+
+## Styles in React implementation
+``` html
+<div style={{color: "black"}} ></div>
+```
+
+> "-" not usable, use Cammel -> ex: background-color: -> backgroundColor:
+## use a constant to implement styles
+
+``` typescript
+import React, { Component } from 'react'
+
+export default class NameOfTheComponent extents Component {
+  render(){
+    const styleconstantname = {
+        color: "black",
+        backgroundColor: "blue"
+    }
+    return (
+       <div style={styleconstantname} ></div>
+    );
+  }
+}
+```
+## use form styles.css 
+``` typescript
+import './style.css'
+```
+
+
+### Exemple:
+</br>
+
+style.css
+``` css
+.divstyle{
+    color: black;
+    background-color: blue;
+}
+```
+
+NameOfTheComponent.js
+``` typescript
+import React, { Component } from 'react'
+import './style.css'
+
+export default class NameOfTheComponent extents Component {
+  render(){
+    
+    return (
+       <div className="divstyle" ></div>    //divstyle - from .css file
+    );
+  }
+}
+```
