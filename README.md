@@ -3,6 +3,6 @@
 
 <h2>Frontend</h2>
 
- - [ React](year2/bd/theory)
- - 
+ - [React](frontend/react/README.md)
+ 
 
