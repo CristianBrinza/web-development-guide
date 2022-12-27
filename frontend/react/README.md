@@ -3,12 +3,14 @@
 ## Table of contents
 1. [Requirements](#1)
 2. New React App 
-    1. [Without TypeScripth](#2)
-    2. [With TypeScripth](#3)
-    3. [Add TypeScript](#4)
+    - [Without TypeScripth](#2)
+    - [With TypeScripth](#3)
+    - [Add TypeScript](#4)
 3. [Components](#5)
 4. [Props](#6)
 5. [Constructors](#7)
+6. [Forms](#8)
+7. [CSS](#9)
 
 
 
@@ -389,7 +391,7 @@ export default class NameOfTheComponent extents Component {
   }
 }
 ```
-## use form styles.css 
+## Use <b>styles</b> from styles.css 
 ``` typescript
 import './style.css'
 ```
