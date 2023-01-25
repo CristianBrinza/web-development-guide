@@ -11,6 +11,7 @@
 5. [Constructors](#7)
 6. [Forms](#8)
 7. [CSS](#9)
+8. [Component LifeCircle](#10)
 
 
 
@@ -398,7 +399,6 @@ import './style.css'
 
 
 ### Exemple:
-</br>
 
 style.css
 ``` css
@@ -422,3 +422,14 @@ export default class NameOfTheComponent extents Component {
   }
 }
 ```
+
+# Component LifeCircle <a name="10"></a>
+
+1. Initialization (<i> set props and Initial State of the component in constructor</i> )
+2. Mounting ( <i>Mount() -> Render() -> DidMount()</i> )
+3. Updation ( <i>setState() -> Update() -> Render() -> DidMount()</i> )
+4. Unmounting ( <i>WillUnmount()</i> )
+
+
+# API <a name="11"></a>
+
